@@ -5,10 +5,45 @@ const result = document.getElementById("result");
 const submitBtn = document.getElementById("submit-btn");
 const errorMessage = document.getElementById("error-msg");
 const body = document.querySelector("body");
+const icon = document.getElementById("icon");
 
 const operators = ["+", "-", "*"];
 let answerValue;
 let operatorQuestion;
+
+// Icons arrays
+const arrCorrectAnswers = [
+  "/assets/ok-hand-svgrepo-com.svg",
+  "/assets/party-popper-svgrepo-com.svg",
+  "/assets/sign-of-the-horns-svgrepo-com.svg",
+  "/assets/hundred-points-svgrepo-com.svg", 
+  "/assets/clapping-hands-svgrepo-com.svg",
+  "/assets/white-heavy-check-mark-svgrepo-com.svg",
+  "/assets/beaming-face-with-smiling-eyes-svgrepo-com.svg",
+  "/assets/grinning-cat-face-with-smiling-eyes-svgrepo-com.svg",
+  "/assets/ballot-box-with-check-svgrepo-com.svg",
+  "/assets/1st-place-medal-svgrepo-com.svg"
+]
+
+const arrWrongAnswers = [
+  "/assets/neutral-face-svgrepo-com.svg",
+  "/assets/loudly-crying-face-svgrepo-com.svg",
+  "/assets/sad-but-relieved-face-svgrepo-com.svg",
+  "/assets/upside-down-face-svgrepo-com.svg",
+  "/assets/weary-face-svgrepo-com.svg",
+  "/assets/bear-face-svgrepo-com.svg",
+  "/assets/broken-heart-svgrepo-com.svg",
+  "/assets/camel-svgrepo-com.svg",
+  "/assets/crying-cat-face-svgrepo-com.svg",
+  "/assets/pensive-face-svgrepo-com.svg"
+]
+
+
+// Random icon answer
+const iconAnswer = (answer) => {
+    return answer ? arrCorrectAnswers[Math.floor(Math.random() * arrCorrectAnswers.length)] : arrWrongAnswers[Math.floor(Math.random() * arrWrongAnswers.length)]
+}
+
 
 // Random Value Generator
 const randomValue = (min, max) => Math.floor(Math.random() * (max - min)) + min;
@@ -56,10 +91,20 @@ submitBtn.addEventListener("click", () => {
 
   //If user input is not empty
   if (userInput) {
+    icon.style.width = "128px";
+    icon.style.height = "128px";
+    icon.style.marginBottom = "2rem";
+    let image = ""
+
+    result.style.color = "#fff";
+
     //If the user guessed correct answer
     if (userInput == answerValue) {
-      body.style.backgroundColor = "green";
-      stopGame(`Yippie!! <span>Correct</span> Answer`);
+      image = iconAnswer(true);
+      icon.setAttribute("src", image);
+      controls.style.backgroundColor = "#32a852";
+
+      stopGame(`Yippie!! <span> Correct</span> Answer`);
     } 
     //If user inputs operator other than +,-,* 
     else if (operatorQuestion && !operators.includes(userInput)) {
@@ -68,8 +113,11 @@ submitBtn.addEventListener("click", () => {
     } 
     //If user guessed wrong answer
     else {
-      body.style.backgroundColor = "red";
-      stopGame(`Opps!!<span>Wrong</span> Answer`);
+      image = iconAnswer(false);
+      icon.setAttribute("src", image);
+      controls.style.backgroundColor = "#b84640";
+
+      stopGame(`Opps!!<span> Wrong</span> Answer`);
     }
   } 
   //
@@ -81,7 +129,7 @@ submitBtn.addEventListener("click", () => {
 
 // Start Game
 startBtn.addEventListener("click", () => {
-  body.style.backgroundColor = "#f4c531";
+  controls.style.backgroundColor = "#f4c531";
   operatorQuestion = false;
   answerValue = "";
   errorMessage.innerHTML = "";
