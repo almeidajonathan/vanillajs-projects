@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- JS -->
+    <script src="/js/script.js" defer></script>
+    <title>To Do List</title>
+</head>
+
+<body>
+    <div class="todo-container">
+        <h1>TO-DO-LIST</h1>
+        <div class="todo-wrapper">
+            <div class="todo-input-area">
+                <label for="task">Adicione a sua tarefa</label>
+                <div class="todo-input">
+                    <input type="text" placeholder="O que você vai fazer?">
+                    <i class="fa-solid fa-plus"></i>
+                </div>
+            </div>   
+            <div class="todo-search-filter">
+                <div class="search">
+                    <label for="search">Pesquisar:</label>
+                    <div class="todo-input">
+                        <input type="text" placeholder="Buscar...">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                </div>
+                    <div class="filter">
+                        <label for="filter">Filtrar:</label>
+                        <select>
+                            <option value="all">Todos</option>
+                        </select>
+                    </div>
+                
+            </div>
+            <div class="task-area">
+                <div class="task">
+                    <input type="radio" name="task" id="task">
+                    <label>Atividade 1</label><br>
+                    <div class="buttons-area">
+                        <i class="fa-solid fa-pen"></i>
+                        <i class="fa-solid fa-trash-can"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+</body>
+
+</html>
