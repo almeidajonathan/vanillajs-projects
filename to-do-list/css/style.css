@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;1,500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+body {
+    background-image: url("/img/background.jpg");
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    color: #fff;
+}
+
+h1 {
+    display: block;
+    width: 40%;
+    text-align: center;
+    margin-inline: auto;
+    font-style: italic;
+    margin-block: 2rem;
+}
+.todo-container {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+    height: 700px;
+    width: 700px;
+    background: rgba(255, 255, 255, 0.07);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(6.1px);
+    -webkit-backdrop-filter: blur(6.1px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.todo-input-area, .todo-search-filter, .task-area {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    width: 80%;
+    margin-inline: auto;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.07);
+}
+
+.todo-input {
+    display: flex;
+    align-items: center;
+    height: 2.5rem;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.07);
+    border-radius: 8px;
+
+}
+
+/* .todo-input:hover {
+    border-bottom: 2px solid white;
+    
+}  */
+
+
+.todo-input input {
+    width: calc(100% - 28px);
+    height: 100%;
+    padding-left: 1rem;
+}
+
+input, select {
+    background: transparent;
+    outline: none;
+    border: none;
+    color: #fff
+}
+
+.filter select {
+    padding-inline: 1rem;
+}
+
+.todo-search-filter {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 16px;
+}
+
+.todo-search-filter .search, .todo-search-filter .filter {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.todo-search-filter select {
+    height: 2.5rem;
+    background: rgba(255, 255, 255, 0.07);
+    border-radius: 8px;
+
+}
+
+i {
+    display: block;
+    margin-top: 8px;
+    justify-self: center;
+    align-self: center;
+    cursor: pointer;
+    fill: #fff;
+    width: 24px;
+    height: 24px;
+}
+
+
+
