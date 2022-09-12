@@ -28,7 +28,7 @@ h1 {
     transform: translate(-50%, -50%);
     left: 50%;
     top: 50%;
-    height: 700px;
+    /* height: 700px; */
     width: 700px;
     background: rgba(255, 255, 255, 0.07);
     border-radius: 16px;
@@ -44,6 +44,10 @@ h1 {
     width: 80%;
     margin-inline: auto;
     border-bottom: 2px solid rgba(255, 255, 255, 0.07);
+}
+
+.todo-input-area input, .todo-search-filter input, .task-area input {
+    margin-top: .5rem;
 }
 
 .todo-input {
@@ -78,7 +82,9 @@ input, select {
 .filter select {
     padding-inline: 1rem;
 }
-
+.filter select::backdrop {
+    padding-right: 3rem;
+}
 .todo-search-filter {
     display: grid;
     grid-template-columns: 2fr 1fr;
@@ -98,6 +104,43 @@ input, select {
 
 }
 
+.task-area {
+    width: 80%;
+    margin-inline: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.task-area .task {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 8px;
+}
+
+.first-row {
+    background-color: rgba(113, 1, 75, 0.286);
+}
+
+.second-row {
+    background-color: rgba(0, 0, 0, 0.286);
+    
+}
+
+.task-description label {
+    margin-left: 8px;
+}
+
+.task-description input {
+    margin-left: 8px;
+}
+
+.buttons-area {
+    display: flex;
+    gap: 8px;
+    margin-right: 4px;
+}
+
 i {
     display: block;
     margin-top: 8px;
@@ -108,6 +151,7 @@ i {
     width: 24px;
     height: 24px;
 }
+
 
 
 
