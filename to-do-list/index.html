@@ -22,7 +22,7 @@
                 <label for="task">Adicione a sua tarefa</label>
                 <div class="todo-input">
                     <input type="text" placeholder="O que você vai fazer?">
-                    <i class="fa-solid fa-plus"></i>
+                    <i id="add-task-btn"class="fa-solid fa-plus"></i>
                 </div>
             </div>   
             <div class="todo-search-filter">
@@ -42,9 +42,22 @@
                 
             </div>
             <div class="task-area">
-                <div class="task">
-                    <input type="radio" name="task" id="task">
-                    <label>Atividade 1</label><br>
+                <div class="task first-row">
+                    <div class="task-description">
+                        <input type="checkbox" name="task" id="task">
+                        <label name="task">Atividade 1</label><br>
+                    </div>
+                    <div class="buttons-area">
+                        <i class="fa-solid fa-pen"></i>
+                        <i class="fa-solid fa-trash-can"></i>
+                    </div>
+                </div>
+
+                <div data-id="2" class="task second-row">
+                    <div class="task-description">
+                        <input type="checkbox" name="task" id="task">
+                        <label>Atividade 1</label><br>
+                    </div>
                     <div class="buttons-area">
                         <i class="fa-solid fa-pen"></i>
                         <i class="fa-solid fa-trash-can"></i>
