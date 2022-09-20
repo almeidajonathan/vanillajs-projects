@@ -1,27 +1,14 @@
-const inputOnTodoArea = document.querySelector(".todo-input-area .todo-input");
-const addTaskBtn = document.querySelector("#add-task-btn");
-const checkbox = document.querySelectorAll("input[type='checkbox']");
+// Selectors
+const todoInput = document.querySelector('.todo-input');
+const todoButton = document.querySelector('.todo-button');
+const todoList = document.querySelector('.todo-list');
 
-checkbox.forEach((cb) => {
-    cb.addEventListener("change", function() {
-        const text = cb.nextElementSibling;    
-        if (this.checked) {
-            text.style.textDecoration = "line-through";
-        } else {
-            text.style.textDecoration = "none";
-        }
-    })
-})
+//Event Listeners
+todoButton.addEventListener('click', addTodo)
 
 
-       
-
-
-function addTask(){
-    const inputTextTask = addTaskBtn.previousElementSibling.value;
-    // console.log(inputTextTask.value);
-    const task = document.querySelector('.task.second-row label');
-    task.innerHTML = inputTextTask;
+//Functions
+function addTodo(event) {
+    //prevent form
+    event.preventDefault()
 }
-
-addTaskBtn.addEventListener("click", addTask);
